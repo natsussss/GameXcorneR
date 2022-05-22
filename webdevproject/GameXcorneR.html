@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="GameXcorneR">
+<meta name="apple-mobile-web-app-title" content="GameXcorneR">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+<meta property="og:image" content="/C:\Users\Tanvit Singh\OneDrive\Pictures\GameXcorneRicon.jpg">
+<meta property="og:title" content="GameXcorneR- all games you need are here">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#191919">
+<meta name="referrer" content="no-referrer" />
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/C:\Users\Tanvit Singh\OneDrive\Pictures\GameXcorneRicon.jpg">
+<link rel="apple-touch-icon" href="/C:\Users\Tanvit Singh\OneDrive\Pictures\GameXcorneRicon.jpg">
+<link rel="manifest" href="/C:\Users\Tanvit Singh\OneDrive\Desktop\manifest.json">
+<title>GameXcorneR- all games you need are here</title>
+<script src="C:\Users\Tanvit Singh\OneDrive\Desktop\jquery.min.js" defer></script>
+<link rel="stylesheet" href="C:\Users\Tanvit Singh\OneDrive\Desktop\font.min.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\Tanvit Singh\OneDrive\Desktop\webdevproject\style.min.css">
+<script type="text/javascript" src="/C:\Users\Tanvit Singh\OneDrive\Desktop\main.minn.js" defer></script>
+<meta property="og:description" content="All games you need are just one click away<3."><meta name="description" content="">
+</head>
+<body style="background-color:rgb(25,25,25)">
+<div id="coverlight" style="z-index:8"></div>
+<div id="loadcontainer"><div class="loadindicator"></div></div>
+<div class="toppart">
+<div id="songContent" class="floattopsearch">
+<a id="backiconhome" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+<a id="homeicon" onClick="backhome()"><i class="glyphicon glyphicon-home"></i></a>
+<div id="searchWrapper">
+<input type="text" name="searchBar" id="searchBar" placeholder="search for a Game"/>
+</div>
+<ul id="GamesList"></ul>
+<a class="topmenubtn" title="Random Game" href="/random"><i class="glyphicon glyphicon-random"></i>Random</a>
+<a class="topmenubtn" title="A-Z List" href="https://www.igdb.com/advanced_search">A-Z List</a>
+</div>
+<button id="menumobilebtn" OnClick="showmobilemenu()"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
+<button id="showsearchbtn" OnClick="togglesearch()"><i class="glyphicon glyphicon-search"></i></button>
+</div>
+</div>
+<div class="quicksearchcontainer"><div class="resultcontainer">
+<div id="fullresultbtn">
+<a onClick="searchfull()">Full</a><a onClick="searchE1()">GOGO</a><a onClick="searchE7()">API</a><a onClick="searchE11()">AL</a><a onClick="searchE6()">RUSH</a><a onClick="searchMAL()">MAL</a>
+</div>
+<ul class="quickresult"></ul>
+</div></div>
+<div class="middle">
+<div id="flexcontainer">
+<div class="leftside">
+<div id="pwaContainer">
+<button id="pwaButton" class="btn btn-primary">Visit IGDB.com</button>
+</div>
+<div id="featuredcard">
+<div id="featuredbgcont">
+<img id="featuredbg" src="https://cachecow.eu/min/mal/1430/118919.jpg" />
+</div>
+<div id="featuredcont">
+<a href="https://www.igdb.com/games/counter-strike-global-offensive"><img id="featuredimg" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4apq.png"></a>
+<div id="featuredtext">
+Counter Strike<br>2013
+<p>FPS tactical shooter</p>
+</div>
+<a id="featuredNext" onClick="showFeatured(curFeatured +1)"><i class="glyphicon glyphicon-chevron-right"></i></a>
+<a id="featuredBack" onClick="showFeatured(curFeatured -1)"><i class="glyphicon glyphicon-chevron-left"></i></a>
+</div>
+<button type="button" id="readmorebtn" onClick="readmore()" class="btn btn-secondary btn-sm btn-lg btn-block"><i class="glyphicon glyphicon-menu-down"></i></button>
+<div id="navtab">
+<ul class="nav nav-tabs">
+<li id="allbtn" class="active" onClick="showall()"><a>My All Time Favourites</a></li>
+</ul>
+</div>
+<div id="resultplace"><ul class="searchresult"><li><a href="https://www.igdb.com/games/valorant">
+<div class="searchimg">
+<img class="resultimg" alt="valorant" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2mvt.png"/>
+<div class="timetext">2020</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Valorant</p>
+<p class="infotext">FPS</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/genshin-impact">
+<div class="searchimg">
+<img class="resultimg" alt="Genshin Impact" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co480t.png" />
+<div class="timetext">2020</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">Genshin impact</p>
+<p class="infotext">PVE RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/apex-legends">
+<div class="searchimg">
+<img class="resultimg" alt="Apex legends" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1wzo.png" />
+<div class="timetext">2019</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">Apex Legends</p>
+<p class="infotext">Battle royale</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/pubg-battlegrounds">
+<div class="searchimg">
+<img class="resultimg" alt="PUBG" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4c1x.png" />
+<div class="timetext">2017</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">PUBG</p>
+<p class="infotext">Battle royale</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/doom--4">
+<div class="searchimg">
+<img class="resultimg" alt="DOOM" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co3m5h.png" />
+<div class="timetext">2019</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">DOOM</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/grand-theft-auto-v">
+<div class="searchimg">
+<img class="resultimg" alt="GTA-V" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbd.png" />
+<div class="timetext">2013</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">GTA</p>
+<p class="infotext">RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/max-payne-3">
+<div class="searchimg">
+<img class="resultimg" alt="Max Payne 3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2mjo.png" />
+<div class="timetext">2012</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Max payne</p>
+<p class="infotext">RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/assassins-creed-valhalla">
+<div class="searchimg">
+<img class="resultimg" alt="AC valhalla" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2ed3.png" />
+<div class="timetext">2020</div>
+<div class="rating">8/10</div>
+</div>
+<div class="details">
+<p class="name">Assassin's Creed</p>
+<p class="infotext">RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/far-cry-6">
+<div class="searchimg">
+<img class="resultimg" alt="Far Cry 6" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2npg.png" />
+<div class="timetext">2021</div>
+<div class="rating">8/10</div>
+</div>
+<div class="details">
+<p class="name">FarCry</p>
+<p class="infotext">PVP RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/league-of-legends">
+<div class="searchimg">
+<img class="resultimg" alt="LOL" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.png" />
+<div class="timetext">2009</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Leauge of Legends</p>
+<p class="infotext">PVP RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/call-of-duty-black-ops-cold-war">
+<div class="searchimg">
+<img class="resultimg" alt="COD cold war" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2n6j.png" />
+<div class="timetext">2020</div>
+<div class="rating">7/10</div>
+</div>
+<div class="details">
+<p class="name">Call of Duty</p>
+<p class="infotext">FPS/BR</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/overwatch-2">
+<div class="searchimg">
+<img class="resultimg" alt="OW2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1sgx.png" />
+<div class="timetext">2022</div>
+<div class="rating">6/10</div>
+</div>
+<div class="details">
+<p class="name">Overwatch</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/halo-infinite">
+<div class="searchimg">
+<img class="resultimg" alt="Halo 6" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2dto.png"/>
+<div class="timetext">2021</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">HALO</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/half-life-alyx">
+<div class="searchimg">
+<img class="resultimg" alt="HL alyx" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tq3.png" />
+<div class="timetext">2020</div>
+<div class="rating">8/10</div>
+</div>
+<div class="details">
+<p class="name">Half Life</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/resident-evil-village">
+<div class="searchimg">
+<img class="resultimg" alt="RE village" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2zpu.png" />
+<div class="timetext">2021</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">Resident Evil</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/fifa-22">
+<div class="searchimg">
+<img class="resultimg" alt="FIFA22" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co3dsm.png" />
+<div class="timetext">2021</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">FIFA</p>
+<p class="infotext">Sports</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/wwe-2k22">
+<div class="searchimg">
+<img class="resultimg" alt="2k22" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4den.png" />
+<div class="timetext">2022</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">WWE-2K22</p>
+<p class="infotext">Sports</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/just-cause-4">
+<div class="searchimg">
+<img class="resultimg" alt="JC4" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co27or.png" />
+<div class="timetext">2018</div>
+<div class="rating">5/10</div>
+</div>
+<div class="details">
+<p class="name">Just Cause</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/igi-origins">
+<div class="searchimg">
+<img class="resultimg" alt="IGI3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2m8y.png" />
+<div class="timetext">2022</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">IGI-Origins</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/total-overdose">
+<div class="searchimg">
+<img class="resultimg" alt="TOD" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1p3i.png" />
+<div class="timetext">2006</div>
+<div class="rating">8/10</div>
+</div>
+<div class="details">
+<p class="name">Total Overdose</p>
+<p class="infotext">RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/hitman-3">
+<div class="searchimg">
+<img class="resultimg" alt="Hitman3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co29lt.png" />
+<div class="timetext">2021</div>
+<div class="rating">7/10</div>
+</div>
+<div class="details">
+<p class="name">Hitman</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/dota-2">
+<div class="searchimg">
+<img class="resultimg" alt="DOTA2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4bko.png" />
+<div class="timetext">2013</div>
+<div class="rating">6/10</div>
+</div>
+<div class="details">
+<p class="name">DOTA</p>
+<p class="infotext">PVP RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/dying-light-2-stay-human">
+<div class="searchimg">
+<img class="resultimg" alt="DL2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co31k4.png" />
+<div class="timetext">2022</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Dying light</p>
+<p class="infotext">FPS RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/pokemon-go">
+<div class="searchimg">
+<img class="resultimg" alt="Pokemon GO" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1zj7.png" />
+<div class="timetext">2016</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Pokemon GO</p>
+<p class="infotext">AR/VR RPG</p>
+</div>
+</a></li><li><a href="https://www.igdb.com/games/vampire-the-masquerade-bloodhunt">
+<div class="searchimg">
+<img class="resultimg" alt="Bloodhunt" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4lbc.png" />
+<div class="timetext">2021</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">BloodHunt</p>
+<p class="infotext">Battle Royale</p> 
+</div>
+</a></li><li><a href="https://www.igdb.com/games/minecraft">
+<div class="searchimg">
+<img class="resultimg" alt="Minecraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.png"/>
+<div class="timetext">2011</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Minecraft</p>
+<p class="infotext">PVP RPG</p> 
+</div>
+</a></li><li><a href="https://www.igdb.com/games/fortnite">
+<div class="searchimg">
+<img class="resultimg" alt="" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2ekt.png"/>
+<div class="timetext">2017</div>
+<div class="rating">7/10</div>
+</div>
+<div class="details">
+<p class="name">Fortnite</p>
+<p class="infotext">Battle Royale</p> 
+</div>
+</a></li><li><a href="https://www.igdb.com/games/elden-ring">
+<div class="searchimg">
+<img class="resultimg" alt="" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.png"/>
+<div class="timetext">2022</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">Elden Ring</p>
+<p class="infotext">PVE RPG</p> 
+</div>
+</a></li><li><a href="https://www.igdb.com/games/mortal-kombat-11">
+<div class="searchimg">
+<img class="resultimg" alt="" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co20mh.png"/>
+<div class="timetext">2019</div>
+<div class="rating">9/10</div>
+</div>
+<div class="details">
+<p class="name">Mortal Kombat 11</p>
+<p class="infotext">PVP</p> 
+</div>
+</a></li><li><a href="https://www.igdb.com/games/tom-clancys-rainbow-six-siege">
+<div class="searchimg">
+<img class="resultimg" alt="" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4q69.png"/>
+<div class="timetext">2015</div>
+<div class="rating">10/10</div>
+</div>
+<div class="details">
+<p class="name">Rainbow Six Siege</p>
+<p class="infotext">FPS</p> 
+</div>
+</body>
+</html>
